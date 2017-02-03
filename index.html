@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Coding Exercises UI</title>
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/site.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Coding Exercises</h1>
+      <h3>Exercise One</h3>      
+      <h4>Convert Number Amount to Word Form</h4>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="InputAmt">Enter an Amount:</label>
+          <input id="InputAmt" type="text" class="form-control" placeholder="Follow formatting notes listed below ..." />
+        </div>
+        <button type="submit" class="btn btn-default">Click to Convert</button>
+      </form>
+      <h6>Notes on Amount Format:</h6>
+      <ul id="Notes">
+        <li>Enter only numbers, and if the amount includes decimals, only one decimal point ('.')</li>
+        <li>Amounts with decimals entered beyond two places will be rounded to the second decimal place (hundredths)</li>
+        <li>Any commas entered will be ignored (including use of the comma to indicate the decimal point, e.g. European notation)
+        <li>Any letters entered will invalidate the input and will not be accepted (including exponent notation, e.g., '+e10')</li>
+        <li>Negative amounts entered will simply be interpreted as the positive value of the amount</li>
+      </ul>
+      <div id="ConvertedResult">
+        <h5>Converted Result: <span>One thousand four hundred eighty two and 45/100</span></h5>        
+      </div>
+    </div> 
+  </body>
+</html>
