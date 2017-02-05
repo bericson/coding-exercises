@@ -28,17 +28,23 @@
       <h6>Guidelines on Amount Format:</h6>
       <ul id="Notes">
         <li>Enter only numbers, and if the amount includes decimals, only one decimal point ('.')</li>
-        <li>Amounts with decimals entered beyond two places will be rounded to the second decimal place (hundredths)</li>
+        <li>Amounts with decimals entered beyond two places will be rounded to the second decimal place (i.e., hundredths)</li>
         <li>Any commas entered will be ignored (including use of the comma to indicate the decimal point, e.g. European notation)
         <li>Any letters entered will invalidate the input and will not be accepted (including exponent notation, e.g., '+e10')</li>
         <li>Negative amounts entered will simply be interpreted as the positive value of the amount</li>
-        <li>Converter does not support numbers/amounts beyond the trillions range (i.e. greater than 999,999,999,999,999 - no decimals allowed at this size)</li>
+        <li>Converter does not support numbers/amounts beyond the millions range (i.e., greater than 999,999,999.999)</li>
+        <li>The amount input field is intended merely as a mechanism for easily entering a valid amount to test the functionality of the converter, and can likely be intentionally broken if one is trying to break it (e.g., pasting illegal values, putting multiple decimals, etc.)</li>
       </ul>
       <div id="ConvertedResultMock">
         <h5>Converted Result (mocked-up): <span>One thousand four hundred eighty two and 45/100</span></h5>        
       </div>      
       <div id="ConvertedResult">
-        <h5>Converted Result (generated): <span></span></h5>        
+        <div>
+          <h5>Amount Entered:</h5> <span></span>
+        </div>
+        <div>          
+          <h5>Converted Result:</h5> <span></span>
+        </div>
       </div>
     </div> 
   </body>
