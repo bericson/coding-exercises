@@ -21,7 +21,7 @@
       <form class="form-inline">
         <div class="form-group">
           <label for="InputAmt">Enter an Amount:</label>
-          <input id="InputAmt" type="number"  min="1" max="999999999999999" class="form-control" placeholder="Follow formatting guidelines listed below ..." />
+          <input id="InputAmt" type="number"  min="1" max="999999999" class="form-control" placeholder="Follow formatting guidelines listed below ..." />
         </div>
         <button type="submit" class="btn btn-default">Click to Convert</button>
       </form>
@@ -31,7 +31,7 @@
         <li>Amounts with decimals entered beyond two places will be rounded to the second decimal place (i.e., hundredths)</li>
         <li>Any commas entered will be ignored (including use of the comma to indicate the decimal point, e.g. European notation)
         <li>Any letters entered will invalidate the input and will not be accepted (including exponent notation, e.g., '+e10')</li>
-        <li>Negative amounts entered will simply be interpreted as the positive value of the amount</li>
+        <!-- <li>Negative amounts entered will simply be interpreted as the positive value of the amount</li> -->
         <li>Converter does not support numbers/amounts beyond the millions range (i.e., greater than 999,999,999.999)</li>
         <li>The amount input field is intended merely as a mechanism for easily entering a valid amount to test the functionality of the converter, and can likely be intentionally broken if one is trying to break it (e.g., pasting illegal values, putting multiple decimals, etc.)</li>
       </ul>
@@ -39,11 +39,11 @@
         <h5>Converted Result (mocked-up): <span>One thousand four hundred eighty two and 45/100</span></h5>        
       </div>      
       <div id="ConvertedResult">
-        <div>
-          <h5>Amount Entered:</h5> <span></span>
+        <div class="row">
+          <h5 class="col-sm-2">Amount Entered:</h5> <span class="col-sm-10"></span>
         </div>
-        <div>          
-          <h5>Converted Result:</h5> <span></span>
+        <div class="row">
+          <h5 class="col-sm-2">Converted Result:</h5> <span class="col-sm-10"></span>
         </div>
       </div>
     </div> 

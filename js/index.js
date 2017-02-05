@@ -11,7 +11,6 @@
 
 	var NumberWordMap = {
 		baseOne: new Map()
-			//.set(0, 'zero')
 			.set(1, 'one')
 			.set(2, 'two')
 			.set(3, 'three')
@@ -144,7 +143,7 @@
 		// 15, 14, 13 // 12, 11, 10 // 9, 8 , 7 // 6, 5, 4 // 3, 2, 1
 		// trillion, billion, million, thousand, hundred, ten, one
 		//placeHolderArr = [ "trillion", "billion", "million", "thousand", "hundred", "ten", "one" ];
-		
+
 		var i = 0,
 				arrLength = integerInputArr.length,
 				convertedResult;
@@ -239,7 +238,7 @@
 			// case 15:
 			// 	break;
 			default:
-				var outOfRangeMsg = "Number(s) not in range ...";
+				var outOfRangeMsg = "Amount not in range ...";
 				console.log(outOfRangeMsg);
 				convertedResult = outOfRangeMsg;
 				break;			
@@ -402,14 +401,20 @@
 		console.log("parsedInput:", parsedInput);		
 
 		$("#ConvertedResult div:first-child span").text(inputAmt);
-		$("#ConvertedResult div:last-child span").text(parsedInput);
+		$("#ConvertedResult div:last-child span").text(parsedInput);		
+		$("#ConvertedResult").css("display", "block");
+		$("#InputAmt").val('');
 	}
 
 	$(function() {
 		$("form").on("submit", function(e) {
 			e.preventDefault();
 			var userInputAmt = $("#InputAmt").val();
-			console.log(userInputAmt);
+			if (!userInputAmt) {
+				alert("Please enter an amount to convert in the input field.");
+				return;
+			}
+			//console.log(userInputAmt);
 			mainProgram(userInputAmt);
 		});
 
