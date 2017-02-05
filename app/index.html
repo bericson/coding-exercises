@@ -17,24 +17,28 @@
     <div class="container">
       <h1>Coding Exercises</h1>
       <h3>Exercise One</h3>      
-      <h4>Convert Number Amount to Word Form</h4>
+      <h4>Convert Number Amount to Words</h4>
       <form class="form-inline">
         <div class="form-group">
           <label for="InputAmt">Enter an Amount:</label>
-          <input id="InputAmt" type="text" class="form-control" placeholder="Follow formatting notes listed below ..." />
+          <input id="InputAmt" type="number"  min="1" max="999999999999999" class="form-control" placeholder="Follow formatting guidelines listed below ..." />
         </div>
         <button type="submit" class="btn btn-default">Click to Convert</button>
       </form>
-      <h6>Notes on Amount Format:</h6>
+      <h6>Guidelines on Amount Format:</h6>
       <ul id="Notes">
         <li>Enter only numbers, and if the amount includes decimals, only one decimal point ('.')</li>
         <li>Amounts with decimals entered beyond two places will be rounded to the second decimal place (hundredths)</li>
         <li>Any commas entered will be ignored (including use of the comma to indicate the decimal point, e.g. European notation)
         <li>Any letters entered will invalidate the input and will not be accepted (including exponent notation, e.g., '+e10')</li>
         <li>Negative amounts entered will simply be interpreted as the positive value of the amount</li>
+        <li>Converter does not support numbers/amounts beyond the trillions range (i.e. greater than 999,999,999,999,999 - no decimals allowed at this size)</li>
       </ul>
+      <div id="ConvertedResultMock">
+        <h5>Converted Result (mocked-up): <span>One thousand four hundred eighty two and 45/100</span></h5>        
+      </div>      
       <div id="ConvertedResult">
-        <h5>Converted Result: <span>One thousand four hundred eighty two and 45/100</span></h5>        
+        <h5>Converted Result (generated): <span></span></h5>        
       </div>
     </div> 
   </body>
