@@ -125,7 +125,7 @@
 	//var initialInput = "9";
 	//var initialInput = "29";
 	//var initialInput = "100";
-	var initialInput = "7129";
+	var initialInput = "7000000000";
 	//var initialInput = "17129";
 	//var initialInput = "617129";
 	//var initialInput = "3617129";
@@ -146,7 +146,8 @@
 
 		var i = 0,
 				arrLength = integerInputArr.length,
-				convertedResult;
+				convertedResult,
+				sliceRangeHundred;
 
 		console.log("initialInput:", integerInputArr);
 		console.log("convertIntegerToWords arrLength:", arrLength);
@@ -163,71 +164,71 @@
 			case 3:
 				// 129
 				convertedResult = convertOnesRange(integerInputArr.slice(-3, 1)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 3)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 3));
 				break;
 			case 4:
 				// 7,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-4, 1)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-4, 4)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 2)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 4)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 4));
 				break;
 			case 5:			
 				// 17,129
 				convertedResult = convertTensOrTeensRange(integerInputArr.slice(-5, 2)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-5, 5)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 3)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 5)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 5));
 			 	break;
 			case 6:
 				// 617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-6, 1)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 3)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 4)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 6)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 6));
 			 	break;
 			case 7:
 				// 3,617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-7, 1)) + ' ' + 
-													getMillionRangeName() + ' ' + 
+													getMillionRangeName(integerInputArr.slice(-7, 7)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-6, 2)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 4)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-4, 4)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 5)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 7)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 7));
 			 	break;
 			case 8:
 				// 53,617,129
 				convertedResult = convertTensOrTeensRange(integerInputArr.slice(-8, 2)) + ' ' + 
-													getMillionRangeName() + ' ' + 
+													getMillionRangeName(integerInputArr.slice(-8, 8)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-6, 3)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
 													convertTensOrTeensRange(integerInputArr.slice(-5, 5)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-4, 4)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 6)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 8)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 8));
 			 	break;
 			case 9:
 				// 853,617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-9, 1)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
 													convertTensOrTeensRange(integerInputArr.slice(-8, 3)) + ' ' + 
-													getMillionRangeName() + ' ' + 
+													getMillionRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-6, 4)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 6)) + ' ' + 
-													getThousandRangeName() + ' ' + 
+													getThousandRangeName(integerInputArr.slice(-4, 4)) + ' ' + 
 													convertOnesRange(integerInputArr.slice(-3, 7)) + ' ' + 
-													getHundredRangeName() + ' ' + 
+													getHundredRangeName(integerInputArr.slice(-3, 9)) + ' ' + 
 													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 9));
 			 	break;			 	
 			// case 10:
@@ -313,9 +314,7 @@
 					localArrLen = localizedInputArr.length,
 					result;
 
-			if (localizedInputArr[0] === 0 && localizedInputArr[1] === 0) {
-				return '';
-			}
+			if (localizedInputArr[0] === 0 && localizedInputArr[1] === 0) { result = ''; }
 			else if (localizedInputArr[0] === 1 && localizedInputArr[1] === 0) {
 				result = convertTensRange(localizedInputArr.slice(-2, 1));
 			}  
@@ -338,9 +337,7 @@
 					localArrLen = localizedInputArr.length,
 					result;			
 
-			if (localizedInputArr[0] === 0 && localizedInputArr[1] === 0) {
-				return '';
-			} 
+			if (localizedInputArr[0] === 0 && localizedInputArr[1] === 0) { result = ''; } 
 			else if (localizedInputArr[0] >= 1 && localizedInputArr[1] === 0) {
 				result = convertTensRange(localizedInputArr.slice(-2, 1));;
 			} 
@@ -358,34 +355,70 @@
 			return result;
 		}
 
-		function getHundredRangeName() {
-			var hundredRangeName = NumberWordMap.baseHundred.get(1);
-			console.log("hundredRangeName:", ucFirst(hundredRangeName));	
-			return hundredRangeName;
+		function sumArr(array) {
+			var summedArray = array.reduce(function(a, b) { return a + b; }, 0);
+			console.log("summedArray:", summedArray);
+			return summedArray;
 		}
 
-		function getThousandRangeName() {
-			var thousandRangeName = NumberWordMap.baseThousand.get(1);
-			console.log("thousandRangeName:", ucFirst(thousandRangeName));	
-			return thousandRangeName;
+		function getHundredRangeName(inputArr) {
+			var result;
+			if (sumArr(inputArr) === 0) { result = ''; }
+			else {			
+				var hundredRangeName = NumberWordMap.baseHundred.get(1);
+				console.log("hundredRangeName:", ucFirst(hundredRangeName));
+				result = hundredRangeName;	
+			}
+
+			return result;
 		}
 
-		function getMillionRangeName() {
-			var millionRangeName = NumberWordMap.baseMillion.get(1);
-			console.log("millionRangeName:", ucFirst(millionRangeName));	
-			return millionRangeName;
+		function getThousandRangeName(inputArr) {
+			var result;
+			if (sumArr(inputArr) === 0) { result = ''; }
+			else {			
+				var thousandRangeName = NumberWordMap.baseThousand.get(1);
+				console.log("thousandRangeName:", ucFirst(thousandRangeName));
+				result = thousandRangeName;	
+			}
+
+			return result;
 		}
 
-		function getBillionRangeName() {
-			var billionRangeName = NumberWordMap.baseBillion.get(1);
-			console.log("billionsRangeName:", ucFirst(billionRangeName));	
-			return billionRangeName;
+		function getMillionRangeName(inputArr) {
+			var result;
+			if (sumArr(inputArr) === 0) { result = ''; }
+			else {			
+				var millionRangeName = NumberWordMap.baseMillion.get(1);
+				console.log("millionRangeName:", ucFirst(millionRangeName));
+				result = millionRangeName;	
+			}
+
+			return result;
 		}
 
-		function getTrllionRangeName() {
-			var trillionRangeName = NumberWordMap.baseTrillion.get(1);
-			console.log("trillionsRangeName:", ucFirst(trillionRangeName));	
-			return trillionRangeName;
+		function getBillionRangeName(inputArr) {
+			var result;
+			if (sumArr(inputArr) === 0) { result = ''; }
+			else {			
+				var billionRangeName = NumberWordMap.baseBillion.get(1);
+				console.log("billionsRangeName:", ucFirst(billionRangeName));
+				result = billionRangeName;	
+			}
+
+			return result;
+		}
+
+		function getTrllionRangeName(inputArr) {
+			var result;
+			if (sumArr(inputArr) === 0) { result = ''; }
+			else {
+				var trillionRangeName = NumberWordMap.baseTrillion.get(1);
+				console.log("trillionsRangeName:", ucFirst(trillionRangeName));
+				result = trillionRangeName;				
+			}
+
+			return result;
 		}
 
 		return ucFirst(convertedResult);
