@@ -5,9 +5,6 @@
 //// to "Two thousand five hundred twenty-three and 04/100 dollars"
 ////////
 
-//// Todos:
-// Abstract-out the 'NumberWordMap' object to be an imported module?
-
 (function() {
 
 	var NumberWordMap = {
@@ -117,10 +114,8 @@
 
 	function convertIntegerToWords(integerInputArr) {
 		var arrLength = integerInputArr.length, convertedResult;
-
 		// console.log("initialInput:", integerInputArr);
 		// console.log("convertIntegerToWords arrLength:", arrLength);
-
 		switch(arrLength) {
 			case 1:
 				// 9
