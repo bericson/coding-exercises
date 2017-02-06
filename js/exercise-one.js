@@ -1,10 +1,3 @@
-////////
-//// Write some code that will accept an amount and convert it to the appropriate string representation.
-//// Example:
-//// Convert 2523.04
-//// to "Two thousand five hundred twenty-three and 04/100 dollars"
-////////
-
 (function() {
 
 	var NumberWordMap = {
@@ -57,17 +50,12 @@
 			.set(1, 'trillion')
 	}
 
-	function parseProcessInput(input) {
-		// console.log("raw input:", input);
-		// console.log("raw input typeof:", typeof input);
-		
+	function parseProcessInput(inputAmt) {
 		//// If number amount happens to have been entered as negative, change to positive 
-		//// (converting to number type in the process)
-		input = Math.abs(input);
-		// console.log("non-negative input:", input);
-		// console.log("input typeof:", typeof input);
-
-		var integer = Math.floor(input),
+		//// (converting to number type in the process), then split on the decimal into 
+		//// integer & decimal components
+		var input = Math.abs(inputAmt),
+				integer = Math.floor(input),
 				rawDecimal = input - integer;
 		// console.log("integer:", integer);
 		// console.log("integer typeof:", typeof integer);
@@ -128,72 +116,72 @@
 			case 3:
 				// 129
 				convertedResult = convertOnesRange(integerInputArr.slice(-3, 1)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 1)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 3));
+					getHundredRangeName(integerInputArr.slice(-3, 1)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 3));
 				break;
 			case 4:
 				// 7,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-4, 1)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-4, 1)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 2)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 2)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 4));
+					getThousandRangeName(integerInputArr.slice(-4, 1)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 2)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 2)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 4));
 				break;
 			case 5:			
 				// 17,129
 				convertedResult = convertTensOrTeensRange(integerInputArr.slice(-5, 2)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-5, 2)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 3)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 3)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 5));
+					getThousandRangeName(integerInputArr.slice(-5, 2)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 3)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 3)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 5));
 			 	break;
 			case 6:
 				// 617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-6, 1)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-6, 1)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 3)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-6, 3)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 4)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 4)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 6));
+					getHundredRangeName(integerInputArr.slice(-6, 1)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-5, 3)) + ' ' + 
+					getThousandRangeName(integerInputArr.slice(-6, 3)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 4)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 4)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 6));
 			 	break;
 			case 7:
 				// 3,617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-7, 1)) + ' ' + 
-													getMillionRangeName(integerInputArr.slice(-7, 7)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-6, 2)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-6, 2)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 4)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-6, 4)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 5)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 5)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 7));
+					getMillionRangeName(integerInputArr.slice(-7, 7)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-6, 2)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-6, 2)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-5, 4)) + ' ' + 
+					getThousandRangeName(integerInputArr.slice(-6, 4)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 5)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 5)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 7));
 			 	break;
 			case 8:
 				// 53,617,129
 				convertedResult = convertTensOrTeensRange(integerInputArr.slice(-8, 2)) + ' ' + 
-													getMillionRangeName(integerInputArr.slice(-8, 8)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-6, 3)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-6, 3)) + ' ' + 
-													convertTensOrTeensRange(integerInputArr.slice(-5, 5)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-6, 5)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 6)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 6)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 8));
+					getMillionRangeName(integerInputArr.slice(-8, 8)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-6, 3)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-6, 3)) + ' ' + 
+					convertTensOrTeensRange(integerInputArr.slice(-5, 5)) + ' ' + 
+					getThousandRangeName(integerInputArr.slice(-6, 5)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 6)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 6)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 8));
 			 	break;
 			case 9:
 				// 853,617,129
 				convertedResult = convertOnesRange(integerInputArr.slice(-9, 1)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
-													convertTensOrTeensRange(integerInputArr.slice(-8, 3)) + ' ' + 
-													getMillionRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-6, 4)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-6, 4)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-5, 6)) + ' ' + 
-													getThousandRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
-													convertOnesRange(integerInputArr.slice(-3, 7)) + ' ' + 
-													getHundredRangeName(integerInputArr.slice(-3, 7)) + ' ' + 
-													convertTensTeensOrOnesRange(integerInputArr.slice(-2, 9));
+					getHundredRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
+					convertTensOrTeensRange(integerInputArr.slice(-8, 3)) + ' ' + 
+					getMillionRangeName(integerInputArr.slice(-9, 9)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-6, 4)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-6, 4)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-5, 6)) + ' ' + 
+					getThousandRangeName(integerInputArr.slice(-6, 6)) + ' ' + 
+					convertOnesRange(integerInputArr.slice(-3, 7)) + ' ' + 
+					getHundredRangeName(integerInputArr.slice(-3, 7)) + ' ' + 
+					convertTensTeensOrOnesRange(integerInputArr.slice(-2, 9));
 			 	break;
 			default:
 				var outOfRangeMsg = "Amount not in range ...";
@@ -258,7 +246,7 @@
 		}
 		else {
 			result = 	convertTensRange(inputArr.slice(-2, 1)) + ' ' +
-								convertOnesRange(inputArr.slice(-1, 2));
+				convertOnesRange(inputArr.slice(-1, 2));
 		}
 
 		return result;
@@ -276,7 +264,7 @@
 		} 
 		else if (inputArr[0] >= 1) {
 			result = convertTensRange(inputArr.slice(-2, 1)) + ' ' +
-								convertOnesRange(inputArr.slice(-1, 2));
+				convertOnesRange(inputArr.slice(-1, 2));
 		}
 		else {
 			result = convertOnesRange(inputArr.slice(-1, 2));
@@ -382,17 +370,16 @@
 			mainProgram(userInputAmt);
 		});
 
-		//// Crossbrowser workaround for actively limiting numbers/characters allowed 
-		//// in input field as they are entered - source: http://codepen.io/wuori/pen/LNyYBM
+		//// Actively limit numbers/characters allowed in input field as they are entered
+		//// source: http://codepen.io/wuori/pen/LNyYBM
 		$('input[type="number"]').each(function(){
 			$(this).on('keyup',function(){
 				if ($(this).val() > Number($(this).attr("max"))) {
-          val=$(this).val().slice(0, $(this).attr("max").length);
-          $(this).val(val);
-        }
+					val=$(this).val().slice(0, $(this).attr("max").length);
+					$(this).val(val);
+				}
 			});
 		});
-
 	});
 
 })();
