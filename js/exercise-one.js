@@ -350,7 +350,7 @@
 
 	function mainProgram(inputAmt) {
 		var parsedProcessedInput = parseProcessInput(inputAmt);
-		console.log("parsedAndProcessedInput:", parsedProcessedInput);
+		//console.log("parsedAndProcessedInput:", parsedProcessedInput);
 
 		$("#ConvertedResult").css("display", "block");
 		$("#ConvertedResult div:first-child span").text(inputAmt);
