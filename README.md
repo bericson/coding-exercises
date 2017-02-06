@@ -35,7 +35,7 @@ as well as some notes about accepted formatting guidelines)
 
 * Coerce the type of the numbers from strings (what the input field submits by default) to numbers, and split the member digits of the whole number/integer amount component into an array
 
-* For processing the conversion of the whole number/integer into the appropriate English word equivalents, use a switch/case statement for primary flow control, taking the number of digits in the supplied input whole number (array) as the argument to conditionally call the individual functions that each process the number according to the index placeholder position it occupies, inserting appropriate words in the appropriate place (hundreds, thousands, millions, etc.), using intuitively-named functions, such as convertOnesRange(), convertTensTeensOrOnesRange(), getHundredRangeName(), getThousandRangeName(), getMillionRangeName(), etc.
+* For processing the conversion of the whole number/integer into the appropriate English word equivalents, use a switch/case statement for primary flow control, taking the number of digits in the supplied input whole number (array) as the argument to conditionally call the individual functions that each process the number according to the index placeholder position it occupies, inserting appropriate words in the appropriate places (hundred, thousand, million, etc.), using intuitively-named functions, such as convertOnesRange(), convertTensTeensOrOnesRange(), getHundredRangeName(), getThousandRangeName(), getMillionRangeName(), etc.
 
 * Process the decimal to round it to two decimal places (enforced in the UI by the HTML5 input field, but also reinforced in the program/processing code)
 
