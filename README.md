@@ -20,6 +20,8 @@ Convert 2523.04 to "Two thousand five hundred twenty three and 04/100 dollars"
 #### Demo page URL: 
 [https://bericson.github.io/coding-exercises/](https://bericson.github.io/coding-exercises/)
 
+To save anyone whom may be interested in looking at the main program source code the trouble of having to poke around, the file to examine lives here: /coding-exercises/app/js/exercise-one.js
+
 #### Process:
 
 * Build a user interface with a single text/number input field and a button for a user to submit an amount for conversion (
