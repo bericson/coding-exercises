@@ -42,6 +42,7 @@ To save anyone whom may be interested in looking at the main program source code
 
 * Compose together the converted/processed output into a single string and insert it into the DOM for display to the user
 
+* In retrospect, after reviewing other solutions to this challenge, mine seems a bit verbose and perhaps unneccesarily complicated, likely with ample opportunity for refactoring, but, it does seem very clear and readable, thus making it fairly easily maintainabile by others reading/modifying the code in the future
 
 ##### Todos:
 * Find way(s) to further refactor program code, making it more compact, and relying more on looping/iteration
