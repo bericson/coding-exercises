@@ -46,5 +46,7 @@ To save anyone whom may be interested in looking at the main program source code
 
 ##### Todos:
 * Find way(s) to further refactor program code, making it more compact, and relying more on looping/iteration
-* Abstract-out the 'NumberWordMap' object to be an imported module
+* The 'NumberWordMap' object:
+** Change to JSON format (maybe to allow for future localization of words, by simply supplying a different JSON file with the 'NumberWordMap' object containing the mapping of words for the numbers & placeholders in a different language)
+** Abstract-out into a separate file, include it as a dependency?
 * Write unit tests (using Mocha and Chai, most likely)
