@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <title>Coding Exercises UI</title>
     <!-- <script src="/node_modules/jquery/dist/jquery.min.js"></script> -->
-    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/exercise-one.js"></script>
     <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -22,7 +22,12 @@
       <form class="form-inline">
         <div class="form-group">
           <label for="InputAmt">Enter an Amount:</label>
-          <input id="InputAmt" type="number" min="1" max="999999999.99" step="0.01" class="form-control" placeholder="Follow formatting guidelines listed below ..." />           
+          <input id="InputAmt" type="number" min="1" max="999999999.99" step="0.01" class="form-control" placeholder="Follow formatting guidelines listed below ..." />
+          <select id="Language" class="form-control">
+          	<option value="">Select Language</option>
+          	<option value="english">English</option>
+          	<option value="spanish">Espanol</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-default">Click to Convert</button>
       </form>
@@ -33,7 +38,6 @@
         <li>Letters are not allowed (including exponent notation, e.g., '+e10')</li>
         <li>Converter does not support numbers/amounts beyond the millions range (i.e., cannot enter an amount greater than 999999999.99)</li>
         <li>It is recommended to use a modern HTML5-compliant browser while using this converter</li>
-        <!-- <li>The amount input field is intended merely as a mechanism for easily entering a valid amount to test the functionality of the converter program, and can likely be intentionally broken if one is trying to break it (e.g., pasting illegal values, putting multiple decimals, etc.)</li> -->
       </ul>
       <div id="ConvertedResult">
         <div class="row">
@@ -43,6 +47,6 @@
           <h5 class="col-sm-2">Converted Result:</h5> <span class="col-sm-10"></span>
         </div>
       </div>
-    </div> 
+    </div>
   </body>
 </html>
