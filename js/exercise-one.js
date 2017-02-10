@@ -1,118 +1,121 @@
 (function() {
 
 	//// NumberWordMap data object w/ two languages:
-	var NumberWordMap = {
-		"english" : {
-			"baseOne" : {
-				"1" : "one",
-				"2" : "two",
-				"3" : "three",
-				"4" : "four",
-				"5" : "five",
-				"6" : "six",
-				"7" : "seven",
-				"8" : "eight",
-				"9" : "nine"
-			},
-			"baseTeen" : {
-				"1" : "eleven",
-				"2" : "twelve",
-				"3" : "thirteen",
-				"4" : "fourteen",
-				"5" : "fifteen",
-				"6" : "sixteen",
-				"7" : "seventeen",
-				"8" : "eighteen",
-				"9" : "nineteen"
-			},
-			"baseTen" : {
-				"1" : "ten",
-				"2" : "twenty",
-				"3" : "thirty",
-				"4" : "forty",
-				"5" : "fifty",
-				"6" : "sixty",
-				"7" : "seventy",
-				"8" : "eighty",
-				"9" : "ninety"
-			},
-			"baseHundred" : {
-				"1" : "hundred"
-			},
-			"baseThousand" : {
-				"1" : "thousand"
-			},
-			"baseMillion" : {
-				"1" : "million"
-			},
-			"baseBillion" : {
-				"1" : "billion"
-			},
-			"baseTrillion" : {
-				"1" : "trillion"
-			},
-			"currencyName" : "dollars",
-			"conjunctionAnd" : "and"
-		},
-		"spanish" : {
-			"baseOne" : {
-				"1" : "uno",
-				"2" : "dos",
-				"3" : "tres",
-				"4" : "cuatro",
-				"5" : "cinco",
-				"6" : "seis",
-				"7" : "siete",
-				"8" : "ocho",
-				"9" : "nueve"
-			},
-			"baseTeen" : {
-				"1" : "once",
-				"2" : "doce",
-				"3" : "trece",
-				"4" : "catorce",
-				"5" : "quince",
-				"6" : "dieciséis",
-				"7" : "diecisiete",
-				"8" : "diecisiete",
-				"9" : "diecinueve"
-			},
-			"baseTen" : {
-				"1" : "diez",
-				"2" : "veinte",
-				"3" : "treinta",
-				"4" : "cuarenta",
-				"5" : "cincuenta",
-				"6" : "sesenta",
-				"7" : "setenta",
-				"8" : "ochenta",
-				"9" : "noventa"
-			},
-			"baseHundred" : {
-				"1" : "cien"
-			},
-			"baseThousand" : {
-				"1" : "mil"
-			},
-			"baseMillion" : {
-				"1" : "millones"
-			},
-			"baseBillion" : {
-				"1" : "mil millones"
-			},
-			"baseTrillion" : {
-				"1" : "un billon"
-			},
-			"currencyName" : "dolares",
-			"conjunctionAnd" : "y"
-		}
-	};
+	// var NumberWordMapLib = {
+	// 	"english" : {
+	// 		"baseOne" : {
+	// 			"1" : "one",
+	// 			"2" : "two",
+	// 			"3" : "three",
+	// 			"4" : "four",
+	// 			"5" : "five",
+	// 			"6" : "six",
+	// 			"7" : "seven",
+	// 			"8" : "eight",
+	// 			"9" : "nine"
+	// 		},
+	// 		"baseTeen" : {
+	// 			"1" : "eleven",
+	// 			"2" : "twelve",
+	// 			"3" : "thirteen",
+	// 			"4" : "fourteen",
+	// 			"5" : "fifteen",
+	// 			"6" : "sixteen",
+	// 			"7" : "seventeen",
+	// 			"8" : "eighteen",
+	// 			"9" : "nineteen"
+	// 		},
+	// 		"baseTen" : {
+	// 			"1" : "ten",
+	// 			"2" : "twenty",
+	// 			"3" : "thirty",
+	// 			"4" : "forty",
+	// 			"5" : "fifty",
+	// 			"6" : "sixty",
+	// 			"7" : "seventy",
+	// 			"8" : "eighty",
+	// 			"9" : "ninety"
+	// 		},
+	// 		"baseHundred" : {
+	// 			"1" : "hundred"
+	// 		},
+	// 		"baseThousand" : {
+	// 			"1" : "thousand"
+	// 		},
+	// 		"baseMillion" : {
+	// 			"1" : "million"
+	// 		},
+	// 		"baseBillion" : {
+	// 			"1" : "billion"
+	// 		},
+	// 		"baseTrillion" : {
+	// 			"1" : "trillion"
+	// 		},
+	// 		"currencyNamePlural" : "dollars",
+	// 		"currencyNameSingular" : "dollar",
+	// 		"conjunctionAnd" : "and"
+	// 	},
+	// 	"spanish" : {
+	// 		"baseOne" : {
+	// 			"1" : "uno",
+	// 			"2" : "dos",
+	// 			"3" : "tres",
+	// 			"4" : "cuatro",
+	// 			"5" : "cinco",
+	// 			"6" : "seis",
+	// 			"7" : "siete",
+	// 			"8" : "ocho",
+	// 			"9" : "nueve"
+	// 		},
+	// 		"baseTeen" : {
+	// 			"1" : "once",
+	// 			"2" : "doce",
+	// 			"3" : "trece",
+	// 			"4" : "catorce",
+	// 			"5" : "quince",
+	// 			"6" : "dieciséis",
+	// 			"7" : "diecisiete",
+	// 			"8" : "diecisiete",
+	// 			"9" : "diecinueve"
+	// 		},
+	// 		"baseTen" : {
+	// 			"1" : "diez",
+	// 			"2" : "veinte",
+	// 			"3" : "treinta",
+	// 			"4" : "cuarenta",
+	// 			"5" : "cincuenta",
+	// 			"6" : "sesenta",
+	// 			"7" : "setenta",
+	// 			"8" : "ochenta",
+	// 			"9" : "noventa"
+	// 		},
+	// 		"baseHundred" : {
+	// 			"1" : "cien"
+	// 		},
+	// 		"baseThousand" : {
+	// 			"1" : "mil"
+	// 		},
+	// 		"baseMillion" : {
+	// 			"1" : "millones"
+	// 		},
+	// 		"baseBillion" : {
+	// 			"1" : "mil millones"
+	// 		},
+	// 		"baseTrillion" : {
+	// 			"1" : "un billon"
+	// 		},
+	// 		"currencyNamePlural" : "dolares",
+	// 		"currencyNameSingular" : "dolare",
+	// 		"conjunctionAnd" : "y"
+	// 	}
+	// };
 
-	//var initialInput = "9";
+	//var initialInput = "1";
+	//var initialInput = "1.45";
 	//var initialInput = "29";
 	//var initialInput = "329";
 	//var initialInput = "7129";
-	//var initialInput = "17129";
+	//var initialInput = "17129.05";
 	//var initialInput = "617129";
 	//var initialInput = "3617129";
 	//var initialInput = "53617129";
@@ -120,16 +123,32 @@
 	//var initialInput = "123234.04333";
 	//mainProgram(initialInput, "english");
 
+	var NumberWordMap = {};
+
 	function mainProgram(inputAmt, language) {
-		NumberWordMap = NumberWordMap[language];
-		console.log("NumberWordMap:", NumberWordMap);
-		console.log("NumberWordMap typeof:", typeof NumberWordMap);
+		var pathAndFile = "../../data/number-word-map-" + language + ".json";
+		console.log("pathAndFile: ", pathAndFile);
 
-		var parsedProcessedInput = parseProcessInput(inputAmt);
-		console.log("parsedAndProcessedInput:", parsedProcessedInput);
+		function loadNumberWordMap() {
+			return $.ajax({
+		    type: "GET",
+		    url: pathAndFile,
+		  });
+		}
 
-		renderOutput(inputAmt, parsedProcessedInput);
-		//renderOutput(inputAmt);
+		loadNumberWordMap().done(function(resp) {
+			NumberWordMap = resp.NumberWordMapLib[0];
+			//console.log("NumberWordMap:", NumberWordMap);
+			//console.log("NumberWordMap typeof:", typeof NumberWordMap);
+
+			var parsedProcessedInput = parseProcessInput(inputAmt);
+			console.log("parsedAndProcessedInput:", parsedProcessedInput);
+
+			renderOutput(inputAmt, parsedProcessedInput);
+
+		}).fail(function() {
+			console.log("Failed to load 'NumberWordMap' JSON library object ...")
+		});
 	};
 
 	function parseProcessInput(inputAmt) {
@@ -157,15 +176,28 @@
 		}
 		//console.log("integerNumArr:", integerNumArr);
 
+		var convertedIntegerToWords = convertIntegerToWords(integerNumArr);
+		//console.log("convertedIntegerToWords:", convertedIntegerToWords);
+
+
 		////// Process decimal component
 		//// Round the decimal to two places, remove the leading zero and the decimal point
 		var filteredDecimal = rawDecimal.toFixed(2).slice(2, 4);
 
-		var convertedIntegerToWords = convertIntegerToWords(integerNumArr);
-		//console.log("convertedIntegerToWords:", convertedIntegerToWords);
+		var decimalResult = filteredDecimal != 00
+					? ' ' + NumberWordMap.conjunctionAnd + ' ' + filteredDecimal + '/100'
+					: '';
 
-		var decimalValue = filteredDecimal != 00 ?  ' and ' + filteredDecimal + '/100' : '';
-		return convertedIntegerToWords + decimalValue + ' ' + NumberWordMap.currencyName;
+		////// Compose all converted/processed integer/decimal elements together
+		var resultComposed;
+		if (sumArr(integerNumArr) === 1 && !rawDecimal) {
+			//console.log("resultComplete sumArr(integerNumArr):", sumArr(integerNumArr));
+			resultComposed = convertedIntegerToWords + ' ' + NumberWordMap.currencyNameSingular;
+		} else {
+			resultComposed = convertedIntegerToWords + decimalResult + ' ' + NumberWordMap.currencyNamePlural;
+		}
+
+		return resultComposed;
 	};
 
 	function convertIntegerToWords(integerInputArr) {
@@ -262,7 +294,7 @@
 	};
 
 	function convertOnesRange(inputArr) {
-		var i = 0, arrLen = inputArr.length, onesRangeNumName;
+		var arrLen = inputArr.length, onesRangeNumName;
 		console.log("convertOnesRange inputArr:", inputArr);
 		console.log("convertOnesRange arrLen:", arrLen);
 		if (inputArr[0] === 0) {
@@ -319,7 +351,7 @@
 		//console.log("convertTensTeensOrOnesRange inputArr:", inputArr);
 		if (inputArr[0] === 0 && inputArr[1] === 0) { result = ''; }
 		else if (inputArr[0] >= 1 && inputArr[1] === 0) {
-			result = convertTensRange(inputArr.slice(-2, 1));;
+			result = convertTensRange(inputArr.slice(-2, 1));
 		}
 		else if (inputArr[0] === 1 && inputArr[1] !== 0) {
 			result = convertTeensRange(inputArr.slice(-1, 2));
@@ -389,7 +421,12 @@
 		$("#ConvertedResult div:first-child span").text(origInputAmt);
 		$("#ConvertedResult div:last-child span").text(processedOutput);
 		$("#InputAmt").val("");
-		$("#Language option").attr("selected", "");
+		$('#Language option').each(function () {
+			if (this.defaultSelected) {
+				this.selected = true;
+				return false;
+			}
+		});
 	};
 
 	$(function() {
@@ -397,14 +434,14 @@
 			e.preventDefault();
 			var userInputAmt = $("#InputAmt").val(),
 					userLanguageSelection = $("#Language option:selected").val();
-			console.log(userLanguageSelection);
 			if (!userInputAmt) {
 				alert("Please enter an amount to convert in the input field.");
 				return;
 			} else if (!userLanguageSelection) {
-				alert("Please select the language in which you'd like the result translated.");
+				alert("Please select the language in which you'd like the result displayed.");
 				return;
 			}
+			console.log("userLanguageSelection:", userLanguageSelection);
 			mainProgram(userInputAmt, userLanguageSelection);
 		});
 
