@@ -42,11 +42,12 @@ To save anyone whom may be interested in looking at the main program source code
 
 * Compose together the converted/processed output into a single string and insert it into the DOM for display to the user
 
+* The 'NumberWordMap' object:
+** Changed from being defined using Map() to being defined in JSON format
+** Added a Spanish language version and abstracted-out this version and the English version into two separate JSON files, and then had them load conditionally via AJAX depending upon user input
+
 * In retrospect, after reviewing other solutions to this challenge, mine seems a bit verbose and perhaps unneccesarily complicated, likely with ample opportunity for refactoring, but, it does seem very clear and readable, thus making it fairly easily maintainabile by others reading/modifying the code in the future
 
 ##### Todos:
 * Find way(s) to further refactor program code, making it more compact, and relying more on looping/iteration
-* The 'NumberWordMap' object:
-** Change to JSON format (maybe to allow for future localization of words, by simply supplying a different JSON file with the 'NumberWordMap' object containing the mapping of words for the numbers & placeholders in a different language)
-** Abstract-out into a separate file, include it as a dependency?
 * Write unit tests (using Mocha and Chai, most likely)

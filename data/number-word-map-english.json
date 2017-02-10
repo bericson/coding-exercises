@@ -1,5 +1,5 @@
 {
-	"NumberWordMapEnglish" : [{
+	"NumberWordMapLib" : [{
 		"baseOne" : {
 			"1" : "one",
 			"2" : "two",
@@ -20,7 +20,7 @@
 			"6" : "sixteen",
 			"7" : "seventeen",
 			"8" : "eighteen",
-			"9" : "nineteen'"
+			"9" : "nineteen"
 		},
 		"baseTen" : {
 			"1" : "ten",
@@ -31,7 +31,7 @@
 			"6" : "sixty",
 			"7" : "seventy",
 			"8" : "eighty",
-			"9" : "ninety'"
+			"9" : "ninety"
 		},
 		"baseHundred" : {
 			"1" : "hundred"
@@ -48,7 +48,8 @@
 		"baseTrillion" : {
 			"1" : "trillion"
 		},
-		"currencyName" : "dollars",
+		"currencyNamePlural" : "dollars",
+		"currencyNameSingular" : "dollar",
 		"conjunctionAnd" : "and"
 	}]
 }

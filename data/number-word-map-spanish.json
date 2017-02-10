@@ -1,5 +1,5 @@
 {
-	"NumberWordMapSpanish" : [{
+	"NumberWordMapLib" : [{
 		"baseOne" : {
 			"1" : "uno",
 			"2" : "dos",
@@ -48,7 +48,8 @@
 		"baseTrillion" : {
 			"1" : "un billon"
 		},
-		"currencyName" : "dolares",
+		"currencyNamePlural" : "dolares",
+		"currencyNameSingular" : "dolare",
 		"conjunctionAnd" : "y"
 	}]
 }
