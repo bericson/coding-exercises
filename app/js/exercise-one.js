@@ -1,142 +1,15 @@
 (function() {
 
-	//// NumberWordMap data object w/ two languages:
-	// var NumberWordMapLib = {
-	// 	"english" : {
-	// 		"baseOne" : {
-	// 			"1" : "one",
-	// 			"2" : "two",
-	// 			"3" : "three",
-	// 			"4" : "four",
-	// 			"5" : "five",
-	// 			"6" : "six",
-	// 			"7" : "seven",
-	// 			"8" : "eight",
-	// 			"9" : "nine"
-	// 		},
-	// 		"baseTeen" : {
-	// 			"1" : "eleven",
-	// 			"2" : "twelve",
-	// 			"3" : "thirteen",
-	// 			"4" : "fourteen",
-	// 			"5" : "fifteen",
-	// 			"6" : "sixteen",
-	// 			"7" : "seventeen",
-	// 			"8" : "eighteen",
-	// 			"9" : "nineteen"
-	// 		},
-	// 		"baseTen" : {
-	// 			"1" : "ten",
-	// 			"2" : "twenty",
-	// 			"3" : "thirty",
-	// 			"4" : "forty",
-	// 			"5" : "fifty",
-	// 			"6" : "sixty",
-	// 			"7" : "seventy",
-	// 			"8" : "eighty",
-	// 			"9" : "ninety"
-	// 		},
-	// 		"baseHundred" : {
-	// 			"1" : "hundred"
-	// 		},
-	// 		"baseThousand" : {
-	// 			"1" : "thousand"
-	// 		},
-	// 		"baseMillion" : {
-	// 			"1" : "million"
-	// 		},
-	// 		"baseBillion" : {
-	// 			"1" : "billion"
-	// 		},
-	// 		"baseTrillion" : {
-	// 			"1" : "trillion"
-	// 		},
-	// 		"currencyNamePlural" : "dollars",
-	// 		"currencyNameSingular" : "dollar",
-	// 		"conjunctionAnd" : "and"
-	// 	},
-	// 	"spanish" : {
-	// 		"baseOne" : {
-	// 			"1" : "uno",
-	// 			"2" : "dos",
-	// 			"3" : "tres",
-	// 			"4" : "cuatro",
-	// 			"5" : "cinco",
-	// 			"6" : "seis",
-	// 			"7" : "siete",
-	// 			"8" : "ocho",
-	// 			"9" : "nueve"
-	// 		},
-	// 		"baseTeen" : {
-	// 			"1" : "once",
-	// 			"2" : "doce",
-	// 			"3" : "trece",
-	// 			"4" : "catorce",
-	// 			"5" : "quince",
-	// 			"6" : "dieciséis",
-	// 			"7" : "diecisiete",
-	// 			"8" : "diecisiete",
-	// 			"9" : "diecinueve"
-	// 		},
-	// 		"baseTen" : {
-	// 			"1" : "diez",
-	// 			"2" : "veinte",
-	// 			"3" : "treinta",
-	// 			"4" : "cuarenta",
-	// 			"5" : "cincuenta",
-	// 			"6" : "sesenta",
-	// 			"7" : "setenta",
-	// 			"8" : "ochenta",
-	// 			"9" : "noventa"
-	// 		},
-	// 		"baseHundred" : {
-	// 			"1" : "cien"
-	// 		},
-	// 		"baseThousand" : {
-	// 			"1" : "mil"
-	// 		},
-	// 		"baseMillion" : {
-	// 			"1" : "millones"
-	// 		},
-	// 		"baseBillion" : {
-	// 			"1" : "mil millones"
-	// 		},
-	// 		"baseTrillion" : {
-	// 			"1" : "un billon"
-	// 		},
-	// 		"currencyNamePlural" : "dolares",
-	// 		"currencyNameSingular" : "dolare",
-	// 		"conjunctionAnd" : "y"
-	// 	}
-	// };
-
-	//var initialInput = "1";
-	//var initialInput = "1.45";
-	//var initialInput = "29";
-	//var initialInput = "329";
-	//var initialInput = "7129";
-	//var initialInput = "17129.05";
-	//var initialInput = "617129";
-	//var initialInput = "3617129";
-	//var initialInput = "53617129";
-	//var initialInput = "853617129";
-	//var initialInput = "123234.04333";
-	//mainProgram(initialInput, "english");
-
-	//var NumberWordMap = {};
-
 	function mainProgram(inputAmt, language) {
-		var pathAndFile = "../../data/number-word-map-" + language + ".json";
-		console.log("pathAndFile: ", pathAndFile);
+		var path = "../../data/",
+				fileName = "number-word-map-" + language + ".json",
+				pathAndFileName = path + fileName;
+		//console.log("pathAndFileName: ", pathAndFileName);
 
-		function loadNumberWordMap() {
-			return $.ajax({
-		    type: "GET",
-		    url: pathAndFile,
-		  });
-		}
-
-		loadNumberWordMap().done(function(resp) {
+		$.ajax({
+	    type: "GET",
+	    url: pathAndFileName,
+	  }).done(function(resp) {
 			NumberWordMap = resp.NumberWordMapLib[0];
 			//console.log("NumberWordMap:", NumberWordMap);
 			//console.log("NumberWordMap typeof:", typeof NumberWordMap);
@@ -145,7 +18,6 @@
 			console.log("parsedAndProcessedInput:", parsedProcessedInput);
 
 			renderOutput(inputAmt, parsedProcessedInput);
-
 		}).fail(function() {
 			console.log("Failed to load 'NumberWordMap' JSON ...")
 		});
@@ -445,7 +317,7 @@
 				alert("Please select the language in which you'd like the result displayed.");
 				return;
 			}
-			console.log("userLanguageSelection:", userLanguageSelection);
+			//console.log("userLanguageSelection:", userLanguageSelection);
 			mainProgram(userInputAmt, userLanguageSelection);
 		});
 
