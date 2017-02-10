@@ -1,0 +1,55 @@
+{
+	"NumberWordMapLib" : [{
+		"baseOne" : {
+			"1" : "uno",
+			"2" : "dos",
+			"3" : "tres",
+			"4" : "cuatro",
+			"5" : "cinco",
+			"6" : "seis",
+			"7" : "siete",
+			"8" : "ocho",
+			"9" : "nueve"
+		},
+		"baseTeen" : {
+			"1" : "once",
+			"2" : "doce",
+			"3" : "trece",
+			"4" : "catorce",
+			"5" : "quince",
+			"6" : "dieciséis",
+			"7" : "diecisiete",
+			"8" : "diecisiete",
+			"9" : "diecinueve"
+		},
+		"baseTen" : {
+			"1" : "diez",
+			"2" : "veinte",
+			"3" : "treinta",
+			"4" : "cuarenta",
+			"5" : "cincuenta",
+			"6" : "sesenta",
+			"7" : "setenta",
+			"8" : "ochenta",
+			"9" : "noventa"
+		},
+		"baseHundred" : {
+			"1" : "cien"
+		},
+		"baseThousand" : {
+			"1" : "mil"
+		},
+		"baseMillion" : {
+			"1" : "millones"
+		},
+		"baseBillion" : {
+			"1" : "mil millones"
+		},
+		"baseTrillion" : {
+			"1" : "un billon"
+		},
+		"currencyNamePlural" : "dolares",
+		"currencyNameSingular" : "dolare",
+		"conjunctionAnd" : "y"
+	}]
+}

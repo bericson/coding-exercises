@@ -1,7 +1,7 @@
 (function() {
 
 	function mainProgram(inputAmt, language) {
-		var path = "../data/",
+		var path = "./js/",
 				fileName = "number-word-map-" + language + ".json",
 				pathAndFileName = path + fileName;
 		//console.log("pathAndFileName: ", pathAndFileName);
