@@ -15,7 +15,7 @@
 			//console.log("NumberWordMap typeof:", typeof NumberWordMap);
 
 			var parsedProcessedInput = parseProcessInput(inputAmt);
-			console.log("parsedAndProcessedInput:", parsedProcessedInput);
+			//console.log("parsedAndProcessedInput:", parsedProcessedInput);
 
 			renderOutput(inputAmt, parsedProcessedInput);
 		}).fail(function() {
@@ -78,8 +78,8 @@
 
 	function convertIntegerToWords(integerInputArr) {
 		var arrLength = integerInputArr.length, convertedResult;
-		console.log("initialInput:", integerInputArr);
-		console.log("convertIntegerToWords arrLength:", arrLength);
+		// console.log("initialInput:", integerInputArr);
+		// console.log("convertIntegerToWords arrLength:", arrLength);
 		switch(arrLength) {
 			case 1:
 				// 9
@@ -171,15 +171,15 @@
 
 	function convertOnesRange(inputArr) {
 		var arrLen = inputArr.length, onesRangeNumName;
-		console.log("convertOnesRange inputArr:", inputArr);
-		console.log("convertOnesRange arrLen:", arrLen);
+		// console.log("convertOnesRange inputArr:", inputArr);
+		// console.log("convertOnesRange arrLen:", arrLen);
 		if (inputArr[0] === 0) {
 			onesRangeNumName = '';
 		}
 		else {
 			//console.log("inputArr[0]:", inputArr[0]);
 			onesRangeNumName = NumberWordMap.baseOne[inputArr[0]];
-			console.log("onesRangeNumName:", ucFirst(onesRangeNumName));
+			// console.log("onesRangeNumName:", ucFirst(onesRangeNumName));
 		}
 
 		return onesRangeNumName;
@@ -190,7 +190,7 @@
 		// console.log("convertTensRange inputArr:", inputArr);
 		// console.log("convertTensRange arrLen:", arrLen);
 		var tensRangeNumName = NumberWordMap.baseTen[inputArr[0]];
-		console.log("tensRangeNumName:", ucFirst(tensRangeNumName));
+		// console.log("tensRangeNumName:", ucFirst(tensRangeNumName));
 		return tensRangeNumName;
 	};
 
@@ -200,7 +200,7 @@
 		// console.log("convertTeensRange arrLen:", arrLen);
 		// console.log("inputArr[0]:", inputArr[0]);
 		var teensRangeNumName = NumberWordMap.baseTeen[inputArr[0]];
-		console.log("teensRangeNumName:", ucFirst(teensRangeNumName));
+		// console.log("teensRangeNumName:", ucFirst(teensRangeNumName));
 		return teensRangeNumName;
 	};
 
@@ -255,7 +255,7 @@
 		if (sumArr(inputArr) === 0) { result = ''; }
 		else {
 			var hundredRangeName = NumberWordMap.baseHundred[1];
-			console.log("hundredRangeName:", ucFirst(hundredRangeName));
+			// console.log("hundredRangeName:", ucFirst(hundredRangeName));
 			result = hundredRangeName;
 		}
 
@@ -268,7 +268,7 @@
 		if (sumArr(inputArr) === 0) { result = ''; }
 		else {
 			var thousandRangeName = NumberWordMap.baseThousand[1];
-			console.log("thousandRangeName:", ucFirst(thousandRangeName));
+			// console.log("thousandRangeName:", ucFirst(thousandRangeName));
 			result = thousandRangeName;
 		}
 
@@ -281,7 +281,7 @@
 		if (sumArr(inputArr) === 0) { result = ''; }
 		else {
 			var millionRangeName = NumberWordMap.baseMillion[1];
-			console.log("millionRangeName:", ucFirst(millionRangeName));
+			// console.log("millionRangeName:", ucFirst(millionRangeName));
 			result = millionRangeName;
 		}
 
