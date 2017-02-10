@@ -123,7 +123,7 @@
 	//var initialInput = "123234.04333";
 	//mainProgram(initialInput, "english");
 
-	var NumberWordMap = {};
+	//var NumberWordMap = {};
 
 	function mainProgram(inputAmt, language) {
 		var pathAndFile = "../../data/number-word-map-" + language + ".json";
@@ -147,7 +147,7 @@
 			renderOutput(inputAmt, parsedProcessedInput);
 
 		}).fail(function() {
-			console.log("Failed to load 'NumberWordMap' JSON library object ...")
+			console.log("Failed to load 'NumberWordMap' JSON ...")
 		});
 	};
 
@@ -179,21 +179,25 @@
 		var convertedIntegerToWords = convertIntegerToWords(integerNumArr);
 		//console.log("convertedIntegerToWords:", convertedIntegerToWords);
 
-
 		////// Process decimal component
 		//// Round the decimal to two places, remove the leading zero and the decimal point
 		var filteredDecimal = rawDecimal.toFixed(2).slice(2, 4);
 
-		var decimalResult = filteredDecimal != 00
-					? ' ' + NumberWordMap.conjunctionAnd + ' ' + filteredDecimal + '/100'
-					: '';
-
 		////// Compose all converted/processed integer/decimal elements together
-		var resultComposed;
-		if (sumArr(integerNumArr) === 1 && !rawDecimal) {
-			//console.log("resultComplete sumArr(integerNumArr):", sumArr(integerNumArr));
+		var resultComposed,
+				decimalOnly = sumArr(integerNumArr) !== 0
+					? ' ' + NumberWordMap.conjunctionAnd + ' '
+					: '',
+				decimalResult = filteredDecimal != 00
+					? ' ' + decimalOnly + filteredDecimal + '/100'
+					: '';
+		if (integerNumArr.reverse() && integerNumArr[0] === 1 && !rawDecimal) {
 			resultComposed = convertedIntegerToWords + ' ' + NumberWordMap.currencyNameSingular;
-		} else {
+		}
+		else if (sumArr(integerNumArr) === 0 && rawDecimal) {
+			resultComposed =  decimalResult + ' ' + NumberWordMap.currencyNameSingular;
+		}
+		else {
 			resultComposed = convertedIntegerToWords + decimalResult + ' ' + NumberWordMap.currencyNamePlural;
 		}
 
