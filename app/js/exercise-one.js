@@ -1,7 +1,7 @@
 (function() {
 
 	function mainProgram(inputAmt, language) {
-		var path = "../../data/",
+		var path = "../data/",
 				fileName = "number-word-map-" + language + ".json",
 				pathAndFileName = path + fileName;
 		//console.log("pathAndFileName: ", pathAndFileName);
@@ -19,7 +19,7 @@
 
 			renderOutput(inputAmt, parsedProcessedInput);
 		}).fail(function() {
-			console.log("Failed to load 'NumberWordMap' JSON ...")
+			console.log("Failed to load 'NumberWordMap' JSON ...");
 		});
 	};
 
@@ -62,8 +62,8 @@
 					: '',
 				decimalResult = filteredDecimal != 00
 					? ' ' + decimalOnly + filteredDecimal + '/100'
-					: '';
-		if (integerNumArr.reverse() && integerNumArr[0] === 1 && !rawDecimal) {
+		 			: '';
+		if (integer === 1 && !rawDecimal) {
 			resultComposed = convertedIntegerToWords + ' ' + NumberWordMap.currencyNameSingular;
 		}
 		else if (sumArr(integerNumArr) === 0 && rawDecimal) {
